@@ -1,0 +1,143 @@
+@import "@getable/button";
+@import "@getable/lato";
+@import "../input-field/";
+/* we should consider how we can make it simpler for a user to swap in their own variables file */
+@import "@getable/variables/";
+
+
+
+.modal .input-field {
+  display: inline-block;
+  width: 232px;
+  margin-right: 10px;
+}
+
+
+
+/* fadeout everything below this layer */
+.modal-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  /* center any children */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+
+  width: 100vw;
+  height: 100%;
+
+  background-color: var(--dialog-overlay-color, rgba(255,255,255, .7));
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  box-align: center;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  box-pack: center;
+
+  -webkit-transition: var(--dialog-overlay-show-time, 500ms) all ease-out;
+          transition: var(--dialog-overlay-show-time, 500ms) all ease-out;
+  /* ensure we're on our own layer for performance reasons */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  z-index: var(--zIndex-dialog, 9000); /* this puts it below .ios-overlay, but safely above everything else */
+}
+
+main.modal-blur {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-transition: var(--dialog-overlay-show-time, 500ms) all ease-in;
+          transition: var(--dialog-overlay-show-time, 500ms) all ease-in;
+}
+
+.modal-hidden {
+  opacity: 0;
+}
+
+.modal-show {
+  -webkit-transition: var(--dialog-overlay-hide-time, 200ms) all ease-in;
+          transition: var(--dialog-overlay-hide-time, 200ms) all ease-in;
+  opacity: 1;
+}
+
+.modal-hidden .modal {
+  -webkit-transition: var(--dialog-content-hide-time, 200ms) all ease-in-out;
+          transition: var(--dialog-content-hide-time, 200ms) all ease-in-out;
+  -webkit-transform: translateY(8em);
+  transform: translateY(8em);
+}
+
+.modal-show .modal {
+  -webkit-transition: var(--dialog-content-show-time, 300ms) all ease-in-out;
+          transition: var(--dialog-content-show-time, 300ms) all ease-in-out;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* center the dialog for browser that don't have flexbox */
+.no-flexbox .modal-container {
+  display: block;
+  text-align: center;
+}
+
+.no-flexbox .modal {
+  display: inline-block;
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+  .no-flexbox .modal {
+    margin-top: 20px;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  .no-flexbox .modal {
+    margin-top: 40px;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .no-flexbox .modal {
+    margin-top: 200px;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .no-flexbox .modal {
+    margin-top: 100px;
+  }
+}
+
+.modal {
+  display: block;
+  width: 90vw;
+  box-sizing: border-box;
+  max-width: 25rem;
+  padding: .75rem;
+  background: var(--dialog-background, var(--color-white30));
+  border: 1px solid var(--grey-light, #aaa);
+  border-radius: var(--border-radius, 3px);
+  box-shadow: 0 .05em .3rem rgba(0,0,0,.5);
+}
+
+.modal header, .modal p {
+  text-align: center;
+}
+
+.modal h3 {
+  margin: 1em 0 .75em;
+}
+
+.modal p {
+  margin-bottom: 1.5em;
+}
