@@ -61,10 +61,14 @@
     "smokestack-watch": "^0.4.1",
     "tap-closer": "^1.0.0",
     "tap-spec": "^3.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "react": "^0.13.2"
+  },
+  "peerDependencies": {
+    "react": "^0.13.2"
   },
   "dependencies": {
     "@getable/button": "^3.2.0",
-    "@getable/input-field": "^1.0.0"
+    "@getable/input-field": "^1.0.0",
   }
 }
