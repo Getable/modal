@@ -16,3 +16,8 @@ npm-debug.log
 .DS_Store
 .eslintrc
 *.js
+
+
+example/
+test.js
+test/
