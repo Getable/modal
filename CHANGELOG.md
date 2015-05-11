@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.0 | 2015-05-11
+* remove unused deps
+
 ## v1.1.0 | 2015-05-11
 Added es5 version, prelim test, and magic cruft.
 
@@ -11,6 +14,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
