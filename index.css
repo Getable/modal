@@ -1,6 +1,3 @@
-@import "@getable/button";
-@import "@getable/lato";
-@import "../input-field/";
 /* we should consider how we can make it simpler for a user to swap in their own variables file */
 @import "@getable/variables/";
 
