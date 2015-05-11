@@ -1,7 +1,5 @@
 import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
-import Button from '@getable/button'
-import InputField from '../input-field'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
 
@@ -12,11 +10,11 @@ export default class Modal extends Component {
     return shouldComponentUpdate.apply(this, args)
   }
 
-  static open (modalInstance, target){
+  static open (modalInstance){
     if (process.browser){
       if (!document.getElementById('modal-container')){
-        let container = document.createElement("div")
-          , app = document.getElementById('app')
+        let container = document.createElement('div')
+        let app = document.getElementById('app')
         container.id = 'modal-container'
         document.body.appendChild(container, app)
       }
@@ -39,4 +37,9 @@ export default class Modal extends Component {
     )
   }
 
+}
+
+Modal.propTypes = {
+  // code to make the linter stfu ._.
+  children: PropTypes.any
 }
