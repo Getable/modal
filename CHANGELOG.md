@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.0 | 2015-05-11
+Added es5 version, prelim test, and magic cruft.
+
 ## v0.2.0 | 2015-05-11
 
 
@@ -8,5 +11,6 @@
 
 ### 0.0.0
 Init
+
 
 
