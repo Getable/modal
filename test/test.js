@@ -1,11 +1,11 @@
 import test from 'tape'
-import @getable-modal from '../index.js'
+import getableModal from '../index.js'
 
 test('@getable-modal#get', (t) => {
   t.plan(2)
 
   t.doesNotThrow(
-    @getable-modal.get
+    getableModal.get
     , 'does not throw'
   )
 
