@@ -1,16 +1,16 @@
 import test from 'tape'
-import getableModal from '../index.js'
+import React from 'react'
+import {addons} from 'react/addons'
+import Modal from '../index.jsx'
+const {TestUtils} = addons
+const {isElement} = TestUtils
 
-test('@getable-modal#get', (t) => {
-  t.plan(2)
-
-  t.doesNotThrow(
-    getableModal.get
-    , 'does not throw'
-  )
-
+test('Modal: constructor', (t) => {
+  const modal = React.createElement(Modal)
   t.ok(
-    'I was too lazy to write any tests. Shame on me.'
-    , 'must have at least one test'
+    isElement(modal)
+    , 'is a valid react component'
   )
+
+  t.end()
 })
