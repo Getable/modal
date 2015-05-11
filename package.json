@@ -69,6 +69,6 @@
   },
   "dependencies": {
     "@getable/button": "^3.2.0",
-    "@getable/input-field": "^1.0.0",
+    "@getable/input-field": "^1.0.0"
   }
 }
