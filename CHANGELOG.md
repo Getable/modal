@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.5 | 2015-05-11
+* fix: var name mis-match
+* internal: npmignore jsx
+
 ## v1.2.4 | 2015-05-11
 * fix: allow close to work without an event
 * fix: appendChild doesn’t take a second arg?
@@ -28,6 +32,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
