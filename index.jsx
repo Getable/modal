@@ -14,10 +14,9 @@ export default class Modal extends Component {
   static open (modalInstance){
     if (process.browser){
       if (!document.getElementById('modal-container')){
-        let container = document.createElement('div')
-        let app = document.getElementById('app')
-        document.body.appendChild(container, app)
+        const container = document.createElement('div')
         container.id = container
+        document.body.appendChild(container)
       }
       React.render(modalInstance, document.getElementById(container))
     }
