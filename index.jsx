@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react'
+import React, {Component} from 'react'
 import {addons} from 'react/addons'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
@@ -11,7 +11,7 @@ export default class Modal extends Component {
     return shouldComponentUpdate.apply(this, args)
   }
 
-  static open (modalInstance){
+  static open (modalInstance) {
     if (process.browser){
       if (!document.getElementById('modal-container')){
         const container = document.createElement('div')
@@ -21,7 +21,7 @@ export default class Modal extends Component {
       React.render(modalInstance, document.getElementById(container))
     }
   }
-  static close (e){
+  static close (e) {
     if (process.browser){
       if (e.target.classList.contains('modal-container')){
         React.unmountComponentAtNode(document.getElementById(container))
@@ -29,19 +29,16 @@ export default class Modal extends Component {
     }
   }
 
-  render (){
+  render () {
     return (
       <div className={container} onClick={ Modal.close }>
         <div className={namespace} role="alertdialog" aria-describedby="removed">
+          {/* eslint-disable react/prop-types */}
           {this.props.children}
+          {/* eslint-enable react/prop-types */}
         </div>
       </div>
     )
   }
-
 }
 
-Modal.propTypes = {
-  // code to make the linter stfu ._.
-  children: PropTypes.any
-}
