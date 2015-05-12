@@ -66,5 +66,8 @@
   },
   "peerDependencies": {
     "react": "^0.13.2"
+  },
+  "dependencies": {
+    "@getable/variables": "^1.0.1"
   }
 }

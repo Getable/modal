@@ -5,4 +5,4 @@ import data from './data.js'
 // expose React for debugging
 window.React = React
 
-React.render(<Modal {...data} />, document.getElementById('app'))
+Modal.open(<div><Modal {...data}><button>This button should not close the modal</button></Modal></div>)
