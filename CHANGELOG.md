@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.7 | 2015-05-12
+* update readme
+
 ## v1.2.6 | 2015-05-12
 * update repository in package.jason
 
@@ -35,6 +38,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
