@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.2 | 2015-05-11
+* Remove unused CSS
+
 ## v1.2.1 | 2015-05-11
 * Remove more unused de(r)ps
 
@@ -17,6 +20,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 

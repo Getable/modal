@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "name": "@getable/modal",
   "description": "A simple barebones wrapper modal written in React.",
   "author": {
