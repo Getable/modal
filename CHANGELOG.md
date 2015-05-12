@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.4 | 2015-05-11
+* fix: allow close to work without an event
+* fix: appendChild doesn’t take a second arg?
+* internals: abstract container name
+
 ## v1.2.3 | 2015-05-11
 * Fix close method. Add a slightly better example.
 
@@ -23,6 +28,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
