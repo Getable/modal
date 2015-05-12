@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.3 | 2015-05-11
+* Fix close method. Add a slightly better example.
+
 ## v1.2.2 | 2015-05-11
 * Remove unused CSS
 
@@ -20,6 +23,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
