@@ -23,7 +23,11 @@ export default class Modal extends Component {
   }
   static close (e) {
     if (process.browser){
-      if (e.target.classList.contains('modal-container')){
+      const isModalContainer = e
+        ? e.target.classList.contains(container)
+        : true
+
+      if (isModalContainer){
         React.unmountComponentAtNode(document.getElementById(container))
       }
     }
