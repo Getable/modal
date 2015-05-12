@@ -1,16 +1,6 @@
 /* we should consider how we can make it simpler for a user to swap in their own variables file */
 @import "@getable/variables/";
 
-
-
-.modal .input-field {
-  display: inline-block;
-  width: 232px;
-  margin-right: 10px;
-}
-
-
-
 /* fadeout everything below this layer */
 .modal-container {
   position: fixed;
@@ -125,16 +115,4 @@ main.modal-blur {
   border: 1px solid var(--grey-light, #aaa);
   border-radius: var(--border-radius, 3px);
   box-shadow: 0 .05em .3rem rgba(0,0,0,.5);
-}
-
-.modal header, .modal p {
-  text-align: center;
-}
-
-.modal h3 {
-  margin: 1em 0 .75em;
-}
-
-.modal p {
-  margin-bottom: 1.5em;
 }
