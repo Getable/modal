@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
+const container = `${namespace}-container`
 
 export default class Modal extends Component {
   // use the pure-render mixin without the mixin. This allows us to use es6
@@ -15,23 +16,23 @@ export default class Modal extends Component {
       if (!document.getElementById('modal-container')){
         let container = document.createElement('div')
         let app = document.getElementById('app')
-        container.id = 'modal-container'
         document.body.appendChild(container, app)
+        container.id = container
       }
-      React.render(modalInstance, document.getElementById('modal-container'))
+      React.render(modalInstance, document.getElementById(container))
     }
   }
   static close (e){
     if (process.browser){
       if (e.target.classList.contains('modal-container')){
-        React.unmountComponentAtNode(document.getElementById('modal-container'))
+        React.unmountComponentAtNode(document.getElementById(container))
       }
     }
   }
 
   render (){
     return (
-      <div className='modal-container' onClick={ Modal.close }>
+      <div className={container} onClick={ Modal.close }>
         <div className={namespace} role="alertdialog" aria-describedby="removed">
           {this.props.children}
         </div>
