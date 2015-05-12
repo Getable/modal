@@ -15,7 +15,7 @@ scripts.sh
 npm-debug.log
 .DS_Store
 .eslintrc
-*.js
+*.jsx
 
 
 example/
