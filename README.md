@@ -29,9 +29,15 @@ npm i -S @getable/modal
 ## Usage
 
 ```js
-import  from '@getable/modal'
+import Modal from '@getable/modal'
 
-('Rainbow')
+onClick (){
+  Modal.open(
+    <Modal>
+      <Subview/>
+    </Modal>
+  )
+}
 ```
 
 ## Methods
