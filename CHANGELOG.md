@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.1 | 2015-05-15
+* fix: prevent double initialization of tap plugin?
+* internal: add watch script
+* docs: Fix badges
+
 ## v1.3.0 | 2015-05-15
 * add: close on esc key press
 * add: Modal.close can now be called w/o an event
@@ -48,6 +53,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
