@@ -51,10 +51,18 @@ export default class Modal extends Component {
     if (this.isContainer(e)) Modal.close()
   }
 
+  // the wheel event comes before the scroll event, cancel it instead of the
+  // scroll because scroll isn't cancelable. http://codepen.io/somethingkindawierd/blog/react-mixin-scroll-lock
+  onWheel (e) {
+    if (this.isContainer(e)) e.preventDefault()
+  }
+
   render () {
     return (
       <div className={container}
         onClick={this.onContainerClick.bind(this)}
+        onWheel={this.onWheel.bind(this)}
+        onTouchMove={this.onWheel.bind(this)}
         onTouchTap={this.onContainerClick.bind(this)}
       >
         <div className={namespace} role="alertdialog" aria-describedby="removed">
