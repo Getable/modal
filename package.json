@@ -68,6 +68,7 @@
     "react": "^0.13.2"
   },
   "dependencies": {
-    "@getable/variables": "^1.0.1"
+    "@getable/variables": "^1.0.1",
+    "react-tap-event-plugin": "^0.1.6"
   }
 }
