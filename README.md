@@ -72,7 +72,7 @@ Artistic 2.0 © [Christopher Stumph](christopherstumph.me)
 
 [npm-url]: https://npmjs.org/package/@getable/modal
 [npm-image]: https://badge.fury.io/js/@getable/modal.svg
-[travis-url]: https://travis-ci.org/cstumph/@getable/modal
-[travis-image]: https://travis-ci.org/cstumph/@getable/modal.svg?branch=master
-[daviddm-url]: https://david-dm.org/cstumph/@getable/modal.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/cstumph/@getable/modal
+[travis-url]: https://travis-ci.org/Getable/modal
+[travis-image]: https://travis-ci.org/Getable/modal.svg?branch=master
+[daviddm-url]: https://david-dm.org/Getable/modal.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/Getable/modal
