@@ -21,21 +21,36 @@ export default class Modal extends Component {
       React.render(modalInstance, document.getElementById(container))
     }
   }
-  static close (e) {
-    if (process.browser){
-      const isModalContainer = e
-        ? e.target.classList.contains(container)
-        : true
 
-      if (isModalContainer){
-        React.unmountComponentAtNode(document.getElementById(container))
+  static close () {
+    if (process.browser){
+      const containerEl = document.getElementById(container)
+
+      if (containerEl) {
+        // NOTE: there is a React bug that can cause this to throw
+        // https://github.com/facebook/react/issues/2605
+        // sucks, but it's safe to ignore. Things still work.
+        React.unmountComponentAtNode(containerEl)
+        containerEl.parentElement.removeChild(containerEl)
       }
     }
   }
 
+  isContainer (e) {
+    if (process.browser){
+      return e.target.classList.contains(container)
+    }
+  }
+
+  onContainerClick (e) {
+    if (this.isContainer(e)) Modal.close()
+  }
+
   render () {
     return (
-      <div className={container} onClick={ Modal.close }>
+      <div className={container}
+        onClick={this.onContainerClick.bind(this)}
+      >
         <div className={namespace} role="alertdialog" aria-describedby="removed">
           {/* eslint-disable react/prop-types */}
           {this.props.children}
