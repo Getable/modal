@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {addons} from 'react/addons'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import mousetrap from '@getable/mousetrap'
 injectTapEventPlugin()
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
@@ -14,6 +15,14 @@ export default class Modal extends Component {
   // classes and avoid "magic" code
   shouldComponentUpdate (...args) {
     return shouldComponentUpdate.apply(this, args)
+  }
+
+  componentDidMount () {
+    if (process.browser) mousetrap.bind('esc', Modal.close)
+  }
+
+  componentWillUnmount () {
+    if (process.browser) mousetrap.unbind('esc', Modal.close)
   }
 
   static open (modalInstance) {
