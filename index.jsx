@@ -1,8 +1,13 @@
 import React, {Component} from 'react'
 import {addons} from 'react/addons'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
 const container = `${namespace}-container`
+
+// turn on touch events
+React.initializeTouchEvents(true)
 
 export default class Modal extends Component {
   // use the pure-render mixin without the mixin. This allows us to use es6
@@ -21,21 +26,45 @@ export default class Modal extends Component {
       React.render(modalInstance, document.getElementById(container))
     }
   }
-  static close (e) {
-    if (process.browser){
-      const isModalContainer = e
-        ? e.target.classList.contains(container)
-        : true
 
-      if (isModalContainer){
-        React.unmountComponentAtNode(document.getElementById(container))
+  static close () {
+    if (process.browser){
+      const containerEl = document.getElementById(container)
+
+      if (containerEl) {
+        // NOTE: there is a React bug that can cause this to throw
+        // https://github.com/facebook/react/issues/2605
+        // sucks, but it's safe to ignore. Things still work.
+        React.unmountComponentAtNode(containerEl)
+        containerEl.parentElement.removeChild(containerEl)
       }
     }
   }
 
+  isContainer (e) {
+    if (process.browser){
+      return e.target.classList.contains(container)
+    }
+  }
+
+  onContainerClick (e) {
+    if (this.isContainer(e)) Modal.close()
+  }
+
+  // the wheel event comes before the scroll event, cancel it instead of the
+  // scroll because scroll isn't cancelable. http://codepen.io/somethingkindawierd/blog/react-mixin-scroll-lock
+  onWheel (e) {
+    if (this.isContainer(e)) e.preventDefault()
+  }
+
   render () {
     return (
-      <div className={container} onClick={ Modal.close }>
+      <div className={container}
+        onClick={this.onContainerClick.bind(this)}
+        onWheel={this.onWheel.bind(this)}
+        onTouchMove={this.onWheel.bind(this)}
+        onTouchTap={this.onContainerClick.bind(this)}
+      >
         <div className={namespace} role="alertdialog" aria-describedby="removed">
           {/* eslint-disable react/prop-types */}
           {this.props.children}
