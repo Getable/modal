@@ -1,14 +1,19 @@
+require('babel/polyfill')
 import React, {Component} from 'react'
 import {addons} from 'react/addons'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import mousetrap from '@getable/mousetrap'
-injectTapEventPlugin()
+import EventPluginHub from 'react/lib/EventPluginHub'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
 const container = `${namespace}-container`
 
 // turn on touch events
 React.initializeTouchEvents(true)
+// ensure we don't init the tap event plugin twice
+if (!Object.keys(EventPluginHub.registrationNameModules).includes('onTouchTap')){
+  injectTapEventPlugin()
+}
 
 export default class Modal extends Component {
   // use the pure-render mixin without the mixin. This allows us to use es6
