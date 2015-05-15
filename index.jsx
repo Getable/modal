@@ -1,8 +1,13 @@
 import React, {Component} from 'react'
 import {addons} from 'react/addons'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
 const container = `${namespace}-container`
+
+// turn on touch events
+React.initializeTouchEvents(true)
 
 export default class Modal extends Component {
   // use the pure-render mixin without the mixin. This allows us to use es6
@@ -50,6 +55,7 @@ export default class Modal extends Component {
     return (
       <div className={container}
         onClick={this.onContainerClick.bind(this)}
+        onTouchTap={this.onContainerClick.bind(this)}
       >
         <div className={namespace} role="alertdialog" aria-describedby="removed">
           {/* eslint-disable react/prop-types */}
