@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.3.0 | 2015-05-15
+* add: close on esc key press
+* add: Modal.close can now be called w/o an event
+* add: prevent body scroll when modal is open
+* fix #2: tapping outside on mobile now closes
+* internal: travis can now pass on 0.10
+* internal: better example
+* internal: install mousetrap
+* internal: install react-tap-event-plugin
+
 ## v1.2.7 | 2015-05-12
 * update readme
 
@@ -38,6 +48,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
