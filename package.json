@@ -71,6 +71,7 @@
   "dependencies": {
     "@getable/mousetrap": "^2.0.0",
     "@getable/variables": "^1.0.1",
+    "lodash": "^3.8.0",
     "react-tap-event-plugin": "^0.1.6"
   }
 }

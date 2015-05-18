@@ -1,9 +1,9 @@
-require('babel/polyfill')
 import React, {Component} from 'react'
 import {addons} from 'react/addons'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import mousetrap from '@getable/mousetrap'
 import EventPluginHub from 'react/lib/EventPluginHub'
+import includes from 'lodash/collection/includes'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'modal'
 const container = `${namespace}-container`
@@ -11,7 +11,7 @@ const container = `${namespace}-container`
 // turn on touch events
 React.initializeTouchEvents(true)
 // ensure we don't init the tap event plugin twice
-if (!Object.keys(EventPluginHub.registrationNameModules).includes('onTouchTap')){
+if (!includes(Object.keys(EventPluginHub.registrationNameModules), 'onTouchTap')){
   injectTapEventPlugin()
 }
 
