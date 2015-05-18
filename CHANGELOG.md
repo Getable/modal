@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.3.2 | 2015-05-18
+* fix: incompatible babel/polyfill versions
+
 ## v1.3.1 | 2015-05-15
 * fix: prevent double initialization of tap plugin?
 * internal: add watch script
@@ -53,6 +56,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 
