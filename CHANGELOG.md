@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.3 | 2015-05-20
+* fix: a babel compliation bug
+* internal: tests are causing the release to hang
+* internal: add contributors to package.json
+* internal: bump deps
+
 ## v1.3.2 | 2015-05-18
 * fix: incompatible babel/polyfill versions
 
@@ -56,6 +62,7 @@ Added es5 version, prelim test, and magic cruft.
 
 ### 0.0.0
 Init
+
 
 
 

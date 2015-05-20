@@ -1,5 +1,5 @@
 {
-  "version": "1.3.2",
+  "version": "1.3.3",
   "name": "@getable/modal",
   "description": "A simple barebones wrapper modal written in React.",
   "author": {
@@ -7,11 +7,13 @@
     "email": "cjstumph@gmail.com",
     "url": "christopherstumph.me"
   },
-  "contributors": [{
-    "name": "Joey Baker",
-    "email": "joey@byjoeybaker.com",
-    "url": "https://byjoeybaker.com"
-  }],
+  "contributors": [
+    {
+      "name": "Joey Baker",
+      "email": "joey@byjoeybaker.com",
+      "url": "https://byjoeybaker.com"
+    }
+  ],
   "repository": "Getable/modal",
   "license": "Artistic 2.0",
   "directories": {
