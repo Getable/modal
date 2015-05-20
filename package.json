@@ -7,6 +7,11 @@
     "email": "cjstumph@gmail.com",
     "url": "christopherstumph.me"
   },
+  "contributors": [{
+    "name": "Joey Baker",
+    "email": "joey@byjoeybaker.com",
+    "url": "https://byjoeybaker.com"
+  }],
   "repository": "Getable/modal",
   "license": "Artistic 2.0",
   "directories": {
