@@ -47,31 +47,31 @@
   "main": "index.es5",
   "browser": "index.es5",
   "devDependencies": {
-    "babel": "^5.2.9",
-    "babelify": "^6.0.2",
-    "browserify": "^9.0.8",
-    "dmn": "^1.0.5",
+    "babel": "^5.4.4",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "dmn": "^1.0.10",
     "doctoc": "^0.13.0",
-    "eslint": "^0.20.0",
-    "eslint-plugin-react": "^2.0.0",
+    "eslint": "^0.21.2",
+    "eslint-plugin-react": "^2.3.0",
     "ghooks": "^0.3.2",
     "in-publish": "^1.1.1",
     "nsp": "^1.0.1",
-    "sinon": "^1.12.2",
-    "smokestack": "^3.2.0",
+    "sinon": "^1.14.1",
+    "smokestack": "^3.3.0",
     "smokestack-watch": "^0.4.1",
     "tap-closer": "^1.0.0",
     "tap-spec": "^3.0.0",
     "tape": "^4.0.0",
-    "react": "^0.13.2"
+    "react": "^0.13.3"
   },
   "peerDependencies": {
-    "react": "^0.13.2"
+    "react": "^0.13.3"
   },
   "dependencies": {
-    "@getable/mousetrap": "^2.0.0",
+    "@getable/mousetrap": "^2.0.1",
     "@getable/variables": "^1.0.1",
-    "lodash": "^3.8.0",
-    "react-tap-event-plugin": "^0.1.6"
+    "lodash": "^3.9.1",
+    "react-tap-event-plugin": "^0.1.7"
   }
 }
